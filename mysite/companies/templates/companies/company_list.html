@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ company.company_name }} Detail</title>
+</head>
+<body>
+    <p>Companies list :</p>
+{% if companies %}
+    <ul>
+    {% for company in companies %}
+        <li>
+            <span><a href="/companies/{{ company.id }}/">{{ company.company_name }}</a></span> 
+            <span><button><a href="{% url 'company_update' company.id %}">Edit</a></button></span>
+            <span><button><a href="{% url 'company_delete' company.id %}">Delete</a></button></span>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No companies are available.</p>
+{% endif %}
+<button><a href="{% url 'company_create' %}">Create Company</a></button>
+<button><a href="{% url 'employee_list' %}">List of Employees</a></button>
+</body>
+</html>

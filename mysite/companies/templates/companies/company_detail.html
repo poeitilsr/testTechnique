@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ company.company_name }} Detail</title>
+</head>
+<body>
+    <h1>{{ company.company_name }} Detail</h1>
+    <p>Owner: {{ company.company_owner }}</p>
+    <p>Creation Date: {{ company.creation_date }}</p>
+
+    <h2>Employees</h2>
+    <ul>
+        {% for employee in employees %}
+            <li><a href="{% url 'employee_detail' employee.id %}">{{ employee.employee_name }}</a> - {{ employee.employee_job }}</li>
+        {% empty %}
+            <li>No employees for this company</li>
+        {% endfor %}
+    </ul>
+    <button><a href="{% url 'company_update' company.id %}">Edit</a></button>
+    <button><a href="{% url 'company_delete' company.id %}">Delete</a></button>
+    <button><a href="{% url 'index' %}">List of Companies</a></button>
+</body>
+</html>
