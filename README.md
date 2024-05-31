@@ -2,7 +2,7 @@
 
 ## How to launch application :
 
-### Go in the mysite folder
+### Go to the mysite folder
 ```bash
 cd mysite/
 ```
