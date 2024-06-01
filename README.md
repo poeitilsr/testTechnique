@@ -10,3 +10,5 @@ cd mysite/
 ``` bash
 python manage.py runserver
 ```
+
+Then go to the "http://127.0.0.1:8000/companies/" adress
